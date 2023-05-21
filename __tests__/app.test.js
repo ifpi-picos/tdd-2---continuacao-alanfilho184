@@ -23,8 +23,8 @@ describe('Testes da API de Tarefas', () => {
   test('GET /tarefas - Deve retornar todas as tarefas', async () => {
     const response = await request(server).get('/tarefas');
     expect(response.status).toBe(200);
-    expect(response.body).toContainEqual({"concluida": false, "descricao": "Tarefa 1"});
-  });  
+    expect(response.body).toContainEqual({ "concluida": false, "descricao": "Tarefa 1" });
+  });
   test('PATCH /tarefas/:indice - Deve marcar uma tarefa como concluída', async () => {
     const response = await request(server).patch('/tarefas/0');
 
@@ -37,8 +37,4 @@ describe('Testes da API de Tarefas', () => {
     expect(response.status).toBe(200);
     expect(response.text).toBe('Tarefa removida com sucesso!');
   });
-
-
-
-
 });
